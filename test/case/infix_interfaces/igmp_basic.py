@@ -37,25 +37,25 @@ with infamy.Test() as test:
                                         "name": msend,
                                         "enabled": True,
                                         "infix-interfaces:bridge-port": {
-                                            "bridge": "br0"
+                                            "bridge": "br_0"
                                         }
                                     },
                                     {
                                         "name": mreceive,
                                         "enabled": True,
                                         "infix-interfaces:bridge-port": {
-                                            "bridge": "br0"
+                                            "bridge": "br_0"
                                         }
                                     },
                                     {
                                         "name": nojoin,
                                         "enabled": True,
                                         "infix-interfaces:bridge-port": {
-                                            "bridge": "br0"
+                                            "bridge": "br_0"
                                         }
                                     },
                                     {
-                                        "name": "br0",
+                                        "name": "br_0",
                                         "enabled": True,
                                         "type": "infix-if-type:bridge",
                                         "ipv4": {

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #           ¦                              ¦
-#           ¦       vlan10 IP:10.0.0.2     ¦        br0  IP:10.0.0.3
+#           ¦       vlan10 IP:10.0.0.2     ¦        br_0  IP:10.0.0.3
 #           ¦       /                      ¦       /
-#           ¦     br0  <-- VLAN filtering  ¦     e0.10
+#           ¦     br_0  <-- VLAN filtering  ¦     e0.10
 #           ¦   u/  \t                     ¦    /
 #   PC ------- e0    e1 ---------------------- e0
 # PING -->  ¦             dut1             ¦            dut2
@@ -24,7 +24,7 @@ with infamy.Test() as test:
             "interfaces": {
                 "interface": [
                     {
-                        "name": "br0",
+                        "name": "br_0",
                         "type": "infix-if-type:bridge",
                         "enabled": True,
                         "bridge": {
@@ -34,7 +34,7 @@ with infamy.Test() as test:
                                     {
                                         "vid": 10,
                                         "untagged": [ dut1_e0 ],
-                                        "tagged":   [ "br0", dut1_e1 ]
+                                        "tagged":   [ "br_0", dut1_e1 ]
                                     }
                                 ]
                             }
@@ -45,7 +45,7 @@ with infamy.Test() as test:
                         "type": "infix-if-type:vlan",
                         "enabled": True,
                         "vlan": {
-                            "lower-layer-if": "br0",
+                            "lower-layer-if": "br_0",
                             "id": 10,
                         },
                         "ipv4": {
@@ -62,7 +62,7 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 10,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     },
                     {
@@ -70,7 +70,7 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 10,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     }
                 ]
@@ -81,7 +81,7 @@ with infamy.Test() as test:
             "interfaces": {
                 "interface": [
                     {
-                        "name": "br0",
+                        "name": "br_0",
                         "type": "infix-if-type:bridge",
                         "enabled": True,
                         "ipv4": {
@@ -106,7 +106,7 @@ with infamy.Test() as test:
                             "id": 10,
                         },
                         "infix-interfaces:bridge-port": {
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     }
                 ]

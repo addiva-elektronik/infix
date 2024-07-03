@@ -50,7 +50,7 @@ with infamy.Test() as test:
                                              "name": d1send,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0",
+                                                 "bridge": "br_0",
                                                  "pvid": 55
 
                                              }
@@ -59,7 +59,7 @@ with infamy.Test() as test:
                                              "name": d1receiver,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0",
+                                                 "bridge": "br_0",
                                                  "pvid": 77
                                              }
                                          },
@@ -67,7 +67,7 @@ with infamy.Test() as test:
                                              "name": d1trunk,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0"
+                                                 "bridge": "br_0"
                                              }
                                          },
                                          {
@@ -84,7 +84,7 @@ with infamy.Test() as test:
                                              },
                                              "vlan": {
                                                  "id": 55,
-                                                 "lower-layer-if": "br0"
+                                                 "lower-layer-if": "br_0"
                                              }
 
                                          },
@@ -102,12 +102,12 @@ with infamy.Test() as test:
                                              },
                                              "vlan": {
                                                  "id": 77,
-                                                 "lower-layer-if": "br0"
+                                                 "lower-layer-if": "br_0"
                                              }
 
                                          },
                                          {
-                                             "name": "br0",
+                                             "name": "br_0",
                                              "enabled": True,
                                              "type": "infix-if-type:bridge",
 
@@ -117,7 +117,7 @@ with infamy.Test() as test:
                                                          {
                                                              "vid": 55,
                                                              "untagged": [ d1send ],
-                                                             "tagged": [ d1trunk, "br0" ],
+                                                             "tagged": [ d1trunk, "br_0" ],
                                                              "multicast": {
                                                                  "snooping": True
                                                              }
@@ -125,7 +125,7 @@ with infamy.Test() as test:
                                                          {
                                                              "vid": 77,
                                                              "untagged": [ d1receiver ],
-                                                             "tagged": [ d1trunk, "br0" ],
+                                                             "tagged": [ d1trunk, "br_0" ],
                                                              "multicast": {
                                                                  "snooping": True
                                                              }
@@ -151,7 +151,7 @@ with infamy.Test() as test:
                                              "name": d2receive,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0",
+                                                 "bridge": "br_0",
                                                  "pvid": 55
                                              }
                                          },
@@ -159,7 +159,7 @@ with infamy.Test() as test:
                                              "name": d2sender,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0",
+                                                 "bridge": "br_0",
                                                  "pvid": 77
                                              }
                                          },
@@ -167,7 +167,7 @@ with infamy.Test() as test:
                                              "name": d2trunk,
                                              "enabled": True,
                                              "bridge-port": {
-                                                 "bridge": "br0"
+                                                 "bridge": "br_0"
                                              }
                                          },
                                          {
@@ -184,7 +184,7 @@ with infamy.Test() as test:
                                              },
                                              "vlan": {
                                                  "id": 55,
-                                                 "lower-layer-if": "br0"
+                                                 "lower-layer-if": "br_0"
                                              }
 
                                          },
@@ -202,12 +202,12 @@ with infamy.Test() as test:
                                              },
                                              "vlan": {
                                                  "id": 77,
-                                                 "lower-layer-if": "br0"
+                                                 "lower-layer-if": "br_0"
                                              }
 
                                          },
                                          {
-                                             "name": "br0",
+                                             "name": "br_0",
                                              "enabled": True,
                                              "type": "infix-if-type:bridge",
 
@@ -217,7 +217,7 @@ with infamy.Test() as test:
                                                          {
                                                              "vid": 55,
                                                              "untagged": [ d2receive ],
-                                                             "tagged": [ d2trunk, "br0" ],
+                                                             "tagged": [ d2trunk, "br_0" ],
                                                              "multicast": {
                                                                  "snooping": True
                                                              }
@@ -225,7 +225,7 @@ with infamy.Test() as test:
                                                          {
                                                              "vid": 77,
                                                              "untagged": [ d2sender ],
-                                                             "tagged": [ d2trunk, "br0" ],
+                                                             "tagged": [ d2trunk, "br_0" ],
                                                              "multicast": {
                                                                  "snooping": True
                                                              }

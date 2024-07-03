@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #    ,-------------------------------------,       ,-------------------------------------,
 #    |                          dut1:data2 |       | dut2:data2                          |
-#    |                      br0  ----------|-------|---------  br0                       |
+#    |                     br_0  ----------|-------|---------  br_0                      |
 #    |                     /   \           |       |          /   \                      |
 #    |dut1:mgmt  dut1:data0     dut1:data1 |       | dut2:data0    dut2:data1  dut2:mgmt |
 #    '-------------------------------------'       '-------------------------------------'
@@ -35,7 +35,7 @@ with infamy.Test() as test:
             "interfaces": {
                 "interface": [
                     {
-                        "name": "br0",
+                        "name": "br_0",
                         "type": "infix-if-type:bridge",
                         "enabled": True,
                         "bridge": {
@@ -44,12 +44,12 @@ with infamy.Test() as test:
                                     {
                                         "vid": 10,
                                         "untagged": [ tport10 ],
-                                        "tagged":   [ "br0", tport12 ]
+                                        "tagged":   [ "br_0", tport12 ]
                                     },
                                     {
                                         "vid": 20,
                                         "untagged": [ tport11 ],
-                                        "tagged":   [ "br0", tport12 ]
+                                        "tagged":   [ "br_0", tport12 ]
                                     }
                                 ]
                             }
@@ -60,7 +60,7 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 10,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     },
                     {
@@ -68,14 +68,14 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 20,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     },
                     {
                         "name": tport12,
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
-                            "bridge": "br0",
+                            "bridge": "br_0",
                         }
                     }
                 ]
@@ -86,7 +86,7 @@ with infamy.Test() as test:
             "interfaces": {
                 "interface": [
                     {
-                        "name": "br0",
+                        "name": "br_0",
                         "type": "infix-if-type:bridge",
                         "enabled": True,
                         "bridge": {
@@ -95,12 +95,12 @@ with infamy.Test() as test:
                                     {
                                         "vid": 10,
                                         "untagged": [ tport20 ],
-                                        "tagged":   [ "br0", tport22 ]
+                                        "tagged":   [ "br_0", tport22 ]
                                     },
                                     {
                                         "vid": 20,
                                         "untagged": [ tport21 ],
-                                        "tagged":   [ "br0", tport22 ]
+                                        "tagged":   [ "br_0", tport22 ]
                                     }
                                 ]
                             }
@@ -111,7 +111,7 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 10,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     },
                     {
@@ -119,14 +119,14 @@ with infamy.Test() as test:
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
                             "pvid": 20,
-                            "bridge": "br0"
+                            "bridge": "br_0"
                         }
                     },
                     {
                         "name": tport22,
                         "enabled": True,
                         "infix-interfaces:bridge-port": {
-                            "bridge": "br0",
+                            "bridge": "br_0",
                         }
                     }
                 ]
